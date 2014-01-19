@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="20pt"
+        android:textColor="#f00"
+        android:text="@string/btn_cap"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal|bottom"
+        android:clickable="true" />
+</LinearLayout>
