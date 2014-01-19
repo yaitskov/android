@@ -13,6 +13,7 @@ public class MainActivity
 
     public static final String MAIN = "MAIN";
     Button btn;
+    int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity
     @Override
     protected void onResume() {
         super.onResume();
+        counter = 0;
         Log.d(MAIN, "resume");
     }
 
@@ -56,6 +58,8 @@ public class MainActivity
 
     @Override
     public void onClick(View view) {
+        counter += 1;
+        btn.setText("Clicked " + counter);
         Log.i(MAIN, "HELLO world!!!!!" + view.getX() + ":" + view.getY());
     }
 }
