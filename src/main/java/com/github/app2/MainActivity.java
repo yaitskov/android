@@ -3,15 +3,24 @@ package com.github.app2;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class MainActivity
+        extends Activity
+        implements View.OnClickListener
+{
 
     public static final String MAIN = "MAIN";
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        btn = (Button) findViewById(R.id.button);
+        btn.setOnClickListener(this);
         Log.d(MAIN, "create ----------------------------------------");
     }
 
@@ -43,5 +52,10 @@ public class MainActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(MAIN, "DESTROY -----------------------------------");
+    }
+
+    @Override
+    public void onClick(View view) {
+        Log.i(MAIN, "HELLO world!!!!!" + view.getX() + ":" + view.getY());
     }
 }
